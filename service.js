@@ -15,7 +15,6 @@ const svc = new Service({
 
 // Stops service and listen for the "Uninstall" event, which indicates the
 // process has stopped and is uninstalled.
-
 svc.stop();
 
 svc.on("uninstall", function () {
@@ -28,7 +27,7 @@ svc.on("uninstall", function () {
   }*/
 });
 
-svc.uninstall();
+// svc.uninstall();
 
 // Listen for the "install" event, which indicates the
 // process is available as a service.
