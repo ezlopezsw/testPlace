@@ -2,7 +2,7 @@ const Service = require("node-linux").Service;
 // const { spawn } = require("child_process");
 // const { getArgumentValue } = require("./service/services/argumentReader");
 
-const installationType = "install";
+const installationType = "reinstall";
 
 // Create a new service object
 const svc = new Service({
@@ -18,14 +18,19 @@ const svc = new Service({
 // Stops service and listen for the "Uninstall" event, which indicates the
 // process has stopped and is uninstalled.
 
-/*svc.stop();
+svc.stop();
 
-svc.on('uninstall', function () {
-  console.log('Uninstall complete.');
-  console.log('The service exists: ', svc.exists);
+svc.on("uninstall", function () {
+  console.log("Uninstall complete.");
+  if (installationType === "reinstall") {
+    console.log("Reinstalling service");
+    svc.install();
+  } else {
+    console.log("The service exists: ", svc.exists);
+  }
 });
 
-svc.uninstall();*/
+svc.uninstall();
 
 svc.on("install", function () {
   console.log("Service installed");
