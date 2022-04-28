@@ -8,4 +8,4 @@ const testFunction = () => {
 
 app.listen(5050);
 
-app.get("/test", testFunction());
+app.get("/test", (req, res) => testFunction());
