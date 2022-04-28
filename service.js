@@ -9,6 +9,8 @@ const svc = new Service({
   script: "/home/eze/testPlace/index.js",
 });
 
+svc.start();
+
 svc.on("install", function () {
   console.log("Service installed");
   console.log("The service exists: ", svc.exists);
