@@ -20,12 +20,12 @@ svc.stop();
 
 svc.on("uninstall", function () {
   console.log("Uninstall complete.");
-  if (installationType === "reinstall") {
+  /*if (installationType === "reinstall") {
     console.log("Reinstalling service");
     svc.install();
   } else {
     console.log("The service exists: ", svc.exists);
-  }
+  }*/
 });
 
 svc.uninstall();
